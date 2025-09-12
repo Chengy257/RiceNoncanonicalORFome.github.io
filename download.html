@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads - Rice Noncanonical ORFome</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Rice Noncanonical ORFome</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="stats.html">Data Statistics</a>
+        <a href="annotations.html">Annotations</a>
+        <a href="download.html">Downloads</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h2>Data Files</h2>
+            <div class="download-list">
+                <div class="download-item">
+                    <div class="download-info">
+                        <h3>Supplementary TableS1A</h3>
+                        <p>Ribo-seq datasets and coresspoonding RNA-seq used in this study.</p>
+                    </div>
+                    <a href="res/TableS1A.csv" class="download-button" download>Download</a>
+                </div>
+                <div class="download-item">
+                    <div class="download-info">
+                        <h3>Supplementary TableS1B</h3>
+                        <p>Statistics of Ribo-seq reads number in processing steps.</p>
+                    </div>
+                    <a href="res/TableS1B.csv" class="download-button" download>Download</a>
+                </div>
+                <div class="download-item">
+                    <div class="download-info">
+                        <h3>Supplementary TableS2A</h3>
+                        <p>Annotations and properties of lncORFs identified in this study.</p>
+                    </div>
+                    <a href="res/TableS2A.csv" class="download-button" download>Download</a>
+                </div>
+                <div class="download-item">
+                    <div class="download-info">
+                        <h3>Supplementary TableS2B</h3>
+                        <p>Search results for  lncORF-encoded micropeptides sequence similarity  in public databases.</p>
+                    </div>
+                    <a href="res/TableS2B.csv" class="download-button" download>Download</a>
+                </div>
+                <div class="download-item">
+                    <div class="download-info">
+                        <h3>Supplementary TableS3A</h3>
+                        <p>Mass  spectrometry datasets used in this study.</p>
+                    </div>
+                    <a href="res/TableS3A.csv" class="download-button" download>Download</a>
+                </div>
+                <div class="download-item">
+                    <div class="download-info">
+                        <h3>Supplementary TableS3B</h3>
+                        <p>MSGFplus search results of peptide-spectrum matches (PSMs) for lncORF-encoded micropeptides.</p>
+                    </div>
+                    <a href="res/TableS3B.csv" class="download-button" download>Download</a>
+                </div>
+                <div class="download-item">
+                    <div class="download-info">
+                        <h3>Supplementary TableS4</h3>
+                        <p>Information on lncORFs harboring trait-associated variants.</p>
+                    </div>
+                    <a href="res/TableS4.xlsx" class="download-button" download>Download</a>
+                </div>
+                <!-- Add more files here as needed -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p> Copyright © 2025 Rice Noncanonical ORFome | Laboratory of Development and Disease - Sun Yat-sen University </p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Highlight active nav link
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

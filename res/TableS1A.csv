@@ -1,0 +1,205 @@
+﻿Run ID,Sequence Type,PMID,Project ID,Tissue,Condition,Development Stage,Cultivar,Library Name,Release Date
+SRR5796940,RNA,29087317,PRJNA397035,shoot,normal,two week old,Nip,RNA_seq,2018/11/13
+SRR5796941,RNA,29087317,PRJNA397035,shoot,normal,two week old,Nip,RNA_seq,2018/11/13
+SRR5796950,RNA,29087317,PRJNA397035,shoot,heat 42C for 10mins,two week old,Nip,RNA_seq,2018/11/13
+SRR5796951,RNA,29087317,PRJNA397035,shoot,heat 42C for 10mins,two week old,Nip,RNA_seq,2018/11/13
+SRR5892473,Ribo,29087317,PRJNA397035,shoot,normal,two week old,Nip,Ribo_seq,2018/11/13
+SRR5892474,Ribo,29087317,PRJNA397035,shoot,normal,two week old,Nip,Ribo_seq,2018/11/13
+SRR5892475,Ribo,29087317,PRJNA397035,shoot,heat 42C for 10mins,two week old,Nip,Ribo_seq,2018/11/13
+SRR5892476,Ribo,29087317,PRJNA397035,shoot,heat 42C for 10mins,two week old,Nip,Ribo_seq,2018/11/13
+SRR8594298,Ribo,34384368,PRJNA523300,shoot,normal,three leaf stage,Nip,NB_Ribo_0h_2,2019/5/6
+SRR8594299,Ribo,34384368,PRJNA523300,shoot,normal,three leaf stage,Nip,NB_Ribo_0h_1,2019/5/6
+SRR8594300,RNA,34384368,PRJNA523300,shoot,salt stress,three leaf stage,SR86,SR86_RNA_24h_2,2019/5/6
+SRR8594301,RNA,34384368,PRJNA523300,shoot,salt stress,three leaf stage,SR86,SR86_RNA_24h_1,2019/5/6
+SRR8594302,RNA,34384368,PRJNA523300,shoot,normal,three leaf stage,SR86,SR86_RNA_0h_2,2019/5/6
+SRR8594303,RNA,34384368,PRJNA523300,shoot,normal,three leaf stage,SR86,SR86_RNA_0h_1,2019/5/6
+SRR8594304,RNA,34384368,PRJNA523300,shoot,salt stress,three leaf stage,Nip,NB_RNA_24h_2,2019/5/6
+SRR8594305,RNA,34384368,PRJNA523300,shoot,salt stress,three leaf stage,Nip,NB_RNA_24h_1,2019/5/6
+SRR8594306,RNA,34384368,PRJNA523300,shoot,normal,three leaf stage,Nip,NB_RNA_0h_2,2019/5/6
+SRR8594307,RNA,34384368,PRJNA523300,shoot,normal,three leaf stage,Nip,NB_RNA_0h_1,2019/5/6
+SRR8594308,Ribo,34384368,PRJNA523300,shoot,salt stress,three leaf stage,SR86,SR86_Ribo_24h_2,2019/5/6
+SRR8594309,Ribo,34384368,PRJNA523300,shoot,salt stress,three leaf stage,SR86,SR86_Ribo_24h_1,2019/5/6
+SRR8594310,Ribo,34384368,PRJNA523300,shoot,salt stress,three leaf stage,Nip,NB_Ribo_24h_2,2019/5/6
+SRR8594311,Ribo,34384368,PRJNA523300,shoot,salt stress,three leaf stage,Nip,NB_Ribo_24h_1,2019/5/6
+SRR8594312,Ribo,34384368,PRJNA523300,shoot,normal,three leaf stage,SR86,SR86_Ribo_0h_2,2019/5/6
+SRR8594313,Ribo,34384368,PRJNA523300,shoot,normal,three leaf stage,SR86,SR86_Ribo_0h_1,2019/5/6
+CRR104628,Ribo,32275888,CRA001149,shoot,normal,three week seedling,Nip,Oryza_sativa_wild_type_NIP_with36degree_treatment_for_0_hour,2019/7/12
+CRR104629,Ribo,32275888,CRA001149,shoot,normal,three week seedling,Nip,Oryza_sativa_wild_type_NIP_with_36degree_treatment_for_0_hour,2019/7/12
+CRR104630,Ribo,32275888,CRA001149,shoot,heat 36C 48h,three week seedling,Nip,Oryza_sativa_wild_type_NIP_with_36degree_treatment_for_48_hours,2019/7/12
+CRR104631,Ribo,32275888,CRA001149,shoot,heat 36C 48h,three week seedling,Nip,Oryza_sativa_wild_type_NIP_with_36degree_treatment_for_48_hours,2019/7/12
+CRR104632,Ribo,32275888,CRA001149,shoot,normal,three week seedling,Nip osnsun,Oryza_sativa_osnsun2_1_mutant_with_36degree_treatment_for_0_hour,2019/7/12
+CRR104633,Ribo,32275888,CRA001149,shoot,normal,three week seedling,Nip osnsun,Oryza_sativa_osnsun2_1_mutant_with_36degree_treatment_for_0_hour,2019/7/12
+CRR104634,Ribo,32275888,CRA001149,shoot,heat 36C 48h,three week seedling,Nip osnsun,Oryza_sativa_osnsun2_1_mutant_with_36degree_treatment_for_48_hours,2019/7/12
+CRR104635,Ribo,32275888,CRA001149,shoot,heat 36C 48h,three week seedling,Nip osnsun,Oryza_sativa_osnsun2_1_mutant_with_36degree_treatment_for_48_hours,2019/7/12
+CRR104636,RNA,32275888,CRA001149,shoot,normal,three week seedling,Nip,Oryza_sativa_wild_type_NIP_with_36degree_treatment_for_0_hour,2019/7/12
+CRR104637,RNA,32275888,CRA001149,shoot,normal,three week seedling,Nip,Oryza_sativa_wild_type_NIP_with_36degree_treatment_for_0_hour,2019/7/12
+CRR104638,RNA,32275888,CRA001149,shoot,heat 36C 48h,three week seedling,Nip,Oryza_sativa_wild_type_NIP_with_36degree_treatment_for_48_hours,2019/7/12
+CRR104639,RNA,32275888,CRA001149,shoot,heat 36C 48h,three week seedling,Nip,Oryza_sativa_wild_type_NIP_with_36degree_treatment_for_48_hours,2019/7/12
+CRR104640,RNA,32275888,CRA001149,shoot,normal,three week seedling,Nip osnsun,Oryza_sativa_osnsun2_1_mutant_with_36degree_treatment_for_0_hour,2019/7/12
+CRR104641,RNA,32275888,CRA001149,shoot,normal,three week seedling,Nip osnsun,Oryza_sativa_osnsun2_1_mutant_with_36degree_treatment_for_0_hour,2019/7/12
+CRR104642,RNA,32275888,CRA001149,shoot,heat 36C 48h,three week seedling,Nip osnsun,Oryza_sativa_osnsun2_1_mutant_with_36degree_treatment_for_48_hours,2019/7/12
+CRR104643,RNA,32275888,CRA001149,shoot,heat 36C 48h,three week seedling,Nip osnsun,Oryza_sativa_osnsun2_1_mutant_with_36degree_treatment_for_48_hours,2019/7/12
+SRR8763807,RNA,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_TOT_CON1_polyA_RNA,2019/9/20
+SRR8763808,RNA,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_TOT_SUB1_polyA_RNA,2019/9/20
+SRR8763809,RNA,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_TOT_CON2_polyA_RNA,2019/9/20
+SRR8763810,RNA,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_TOT_SUB2_polyA_RNA,2019/9/20
+SRR8763811,RNA,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_TOT_CON3_polyA_RNA,2019/9/20
+SRR8763812,RNA,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_TOT_SUB3_polyA_RNA,2019/9/20
+SRR8763813,RNA,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_TOT_CON4_polyA_RNA,2019/9/20
+SRR8763814,RNA,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_TOT_SUB4_polyA_RNA,2019/9/20
+SRR8763823,Ribo,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_RS_CON3,2019/9/20
+SRR8763824,Ribo,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_RS_CON3,2019/9/20
+SRR8763825,Ribo,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_RS_CON1,2019/9/20
+SRR8763826,Ribo,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_RS_CON1,2019/9/20
+SRR8763827,Ribo,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_RS_SUB1,2019/9/20
+SRR8763828,Ribo,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_RS_SUB1,2019/9/20
+SRR8763829,Ribo,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_RS_SUB3,2019/9/20
+SRR8763830,Ribo,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_RS_SUB3,2019/9/20
+SRR8763831,Ribo,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_RS_CON4,2019/9/20
+SRR8763832,Ribo,31604238,PRJNA528488,roots tips,normal,7 days old seedling,Nip OXOsRPL18,OS_RS_CON4,2019/9/20
+SRR8763833,Ribo,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_RS_SUB4,2019/9/20
+SRR8763834,Ribo,31604238,PRJNA528488,roots tips,2h submergence,7 days old seedling,Nip OXOsRPL18,OS_RS_SUB4,2019/9/20
+SRR9179251,Ribo,33836077,PRJNA545844,seedling,normal,14 days seedling,ZH11,WT_rep1,2021/3/24
+SRR9179252,Ribo,33836077,PRJNA545844,seedling,normal,14 days seedling,ZH11,WT_rep2,2021/3/24
+SRR9179253,Ribo,33836077,PRJNA545844,seedling,mutant,14 days seedling,ZH11 mutant,hda714_rep1,2021/3/24
+SRR9179254,Ribo,33836077,PRJNA545844,seedling,mutant,14 days seedling,ZH11 mutant,hda714_rep2,2021/3/24
+SRR9218095,RNA,33836077,PRJNA547943,seedling,normal,14 days seedling,ZH11,WT_rep1,2021/3/24
+SRR9218096,RNA,33836077,PRJNA547943,seedling,normal,14 days seedling,ZH11,WT_rep2,2021/3/24
+SRR9218097,RNA,33836077,PRJNA547943,seedling,mutant,14 days seedling,ZH11 mutant,hda714_rep1,2021/3/24
+SRR9218098,RNA,33836077,PRJNA547943,seedling,mutant,14 days seedling,ZH11 mutant,hda714_rep2,2021/3/24
+SRR14340942,Ribo,36199246,PRJNA725700,panicle,normal,NA,Osy63,Osy63_panicle_Ribo_B1_R2,2021/8/11
+SRR14340943,Ribo,36199246,PRJNA725700,panicle,normal,NA,Osy63,Osy63_panicle_Ribo_B1_R1,2021/8/11
+SRR14340944,Ribo,36199246,PRJNA725700,young leaf,normal,NA,Osy63,Osy63_leaf_Ribo_B2_R1,2021/8/11
+SRR14340945,Ribo,36199246,PRJNA725700,young leaf,normal,NA,Osy63,Osy63_leaf_Ribo_B1_R1,2021/8/11
+SRR14340946,Ribo,36199246,PRJNA725700,root,normal,NA,Omh63,Omh63_root_Ribo_B1_R2,2021/8/11
+SRR14340947,Ribo,36199246,PRJNA725700,root,normal,NA,Omh63,Omh63_root_Ribo_B1_R1,2021/8/11
+SRR14340948,Ribo,36199246,PRJNA725700,panicle,normal,NA,Omh63,Omh63_panicle_Ribo_B1_R2,2021/8/11
+SRR14340949,Ribo,36199246,PRJNA725700,panicle,normal,NA,Omh63,Omh63_panicle_Ribo_B1_R1,2021/8/11
+SRR14340950,Ribo,36199246,PRJNA725700,root,normal,NA,Ozs97,Ozs97_root_Ribo_B2_R1,2021/8/11
+SRR14340951,Ribo,36199246,PRJNA725700,root,normal,NA,Ozs97,Ozs97_root_Ribo_B1_R2,2021/8/11
+SRR14340952,Ribo,36199246,PRJNA725700,root,normal,NA,Ozs97,Ozs97_root_Ribo_B1_R1,2021/8/11
+SRR14340953,Ribo,36199246,PRJNA725700,panicle,normal,NA,Ozs97,Ozs97_panicle_Ribo_B1_R2,2021/8/11
+SRR14340954,Ribo,36199246,PRJNA725700,panicle,normal,NA,Ozs97,Ozs97_panicle_Ribo_B1_R1,2021/8/11
+SRR14340955,Ribo,36199246,PRJNA725700,young leaf,normal,NA,Ozs97,Ozs97_leaf_Ribo_B1_R2,2021/8/11
+SRR14340956,Ribo,36199246,PRJNA725700,young leaf,normal,NA,Ozs97,Ozs97_leaf_Ribo_B1_R1,2021/8/11
+SRR14340957,Ribo,36199246,PRJNA725700,root,normal,NA,Osy63,Osy63_root_Ribo_B1_R2,2021/8/11
+SRR14340958,Ribo,36199246,PRJNA725700,root,normal,NA,Osy63,Osy63_root_Ribo_B1_R1,2021/8/11
+SRR14340959,Ribo,36199246,PRJNA725700,young leaf,normal,NA,Omh63,Omh63_leaf_Ribo_B2_R1,2021/8/11
+SRR14340960,Ribo,36199246,PRJNA725700,young leaf,normal,NA,Omh63,Omh63_leaf_Ribo_B1_R1,2021/8/11
+SRR10906561,RNA,32738581,PRJNA601798,leaf,nitrogen supply after,heading stage,Wufengyou286,T1_N_3,2022/2/22
+SRR10906562,RNA,32738581,PRJNA601798,leaf,nitrogen supply after,heading stage,Wufengyou286,T1_N_2,2022/2/22
+SRR10906563,RNA,32738581,PRJNA601798,leaf,nitrogen supply after,heading stage,Wufengyou286,T1_N_1,2022/2/22
+SRR10906564,RNA,32738581,PRJNA601798,leaf,abrupt drought flood alternation,heading stage,Wufengyou286,T1_3,2022/2/22
+SRR10906565,RNA,32738581,PRJNA601798,leaf,abrupt drought flood alternation,heading stage,Wufengyou286,T1_2,2022/2/22
+SRR10906566,RNA,32738581,PRJNA601798,leaf,abrupt drought flood alternation,heading stage,Wufengyou286,T1_1,2022/2/22
+SRR10912953,Ribo,32738581,PRJNA601849,leaf,nitrogen supply after,heading stage,Wufengyou286,T1_N_3_RIB,2022/2/22
+SRR10912954,Ribo,32738581,PRJNA601849,leaf,nitrogen supply after,heading stage,Wufengyou286,T1_N_2_RIB,2022/2/22
+SRR10912955,Ribo,32738581,PRJNA601849,leaf,nitrogen supply after,heading stage,Wufengyou286,T1_N_1_RIB,2022/2/22
+SRR10912956,Ribo,32738581,PRJNA601849,leaf,abrupt drought flood alternation,heading stage,Wufengyou286,T1_3_RIB,2022/2/22
+SRR10912957,Ribo,32738581,PRJNA601849,leaf,abrupt drought flood alternation,heading stage,Wufengyou286,T1_2_RIB,2022/2/22
+SRR10912958,Ribo,32738581,PRJNA601849,leaf,abrupt drought flood alternation,heading stage,Wufengyou286,T1_1_RIB,2022/2/22
+SRR18360990,RNA,36654509,PRJNA817730,leaf,IF,Seedling,japonica,RNA_seq_IF_1,2022/12/29
+SRR18360991,RNA,36654509,PRJNA817730,leaf,normal,Seedling,japonica,RNA_seq_CK3,2022/12/29
+SRR18360992,RNA,36654509,PRJNA817730,leaf,normal,Seedling,japonica,RNA_seq_CK2,2022/12/29
+SRR18360993,RNA,36654509,PRJNA817730,leaf,normal,Seedling,japonica,RNA_seq_CK1,2022/12/29
+SRR18360994,Ribo,36654509,PRJNA817730,leaf,IF,Seedling,japonica,Ribo_IF_3,2022/12/29
+SRR18360995,Ribo,36654509,PRJNA817730,leaf,IF,Seedling,japonica,Ribo_IF_2,2022/12/29
+SRR18360996,Ribo,36654509,PRJNA817730,leaf,IF,Seedling,japonica,Ribo_IF_1,2022/12/29
+SRR18360997,Ribo,36654509,PRJNA817730,leaf,normal,Seedling,japonica,Ribo_CK_3,2022/12/29
+SRR18360998,RNA,36654509,PRJNA817730,leaf,IF,Seedling,japonica,RNA_seq_IF_3,2022/12/29
+SRR18360999,RNA,36654509,PRJNA817730,leaf,IF,Seedling,japonica,RNA_seq_IF_2,2022/12/29
+SRR18361000,Ribo,36654509,PRJNA817730,leaf,normal,Seedling,japonica,Ribo_CK_2,2022/12/29
+SRR18361001,Ribo,36654509,PRJNA817730,leaf,normal,Seedling,japonica,Ribo_CK_1,2022/12/29
+SRR21942390,RNA,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip mhz9,Ribo_4h_mhz9_air_In_replicate_2,2023/7/13
+SRR21942391,RNA,37542048,PRJNA891450,seedling,ethylene 4h,Dark grown seedling,Nip mhz9,Ribo_4h_mhz9_et_In_replicate_1,2023/7/13
+SRR21942392,RNA,37542048,PRJNA891450,seedling,ethylene 4h,Dark grown seedling,Nip mhz9,Ribo_4h_mhz9_et_In_replicate_2,2023/7/13
+SRR21942393,Ribo,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip,Ribo_4h_WT_air_Ribo_replicate_1,2023/7/13
+SRR21942395,Ribo,37542048,PRJNA891450,seedling,ethylene 4h,Dark grown seedling,Nip,Ribo_4h_WT_et_Ribo_replicate_2,2023/7/13
+SRR21942396,Ribo,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip mhz9,Ribo_4h_mhz9_air_Ribo_replicate_1,2023/7/13
+SRR21942397,Ribo,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip mhz9,Ribo_4h_mhz9_air_Ribo_replicate_2,2023/7/13
+SRR21942403,RNA,37542048,PRJNA891450,seedling,ethylene 8h,Dark grown seedling,Nip mhz9,Ribo_8h_mhz9_et_In_replicate_1,2023/7/13
+SRR21942407,Ribo,37542048,PRJNA891450,seedling,air 8h,Dark grown seedling,Nip mhz9,Ribo_8h_mhz9_air_Ribo_replicate_1,2023/7/13
+SRR21942411,Ribo,37542048,PRJNA891450,seedling,ethylene 4h,Dark grown seedling,Nip,Ribo_4h_WT_et_Ribo_replicate_1,2023/7/13
+SRR21942388,RNA,37542048,PRJNA891450,seedling,ethylene 4h,Dark grown seedling,Nip,Ribo_4h_WT_et_In_replicate_2,2023/7/13
+SRR21942389,RNA,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip mhz9,Ribo_4h_mhz9_air_In_replicate_1,2023/7/13
+SRR21942394,Ribo,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip,Ribo_4h_WT_air_Ribo_replicate_2,2023/7/13
+SRR21942398,Ribo,37542048,PRJNA891450,seedling,ethylene 4h,Dark grown seedling,Nip mhz9,Ribo_4h_mhz9_et_Ribo_replicate_1,2023/7/13
+SRR21942399,Ribo,37542048,PRJNA891450,seedling,ethylene 4h,Dark grown seedling,Nip mhz9,Ribo_4h_mhz9_et_Ribo_replicate_2,2023/7/13
+SRR21942400,RNA,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip,Ribo_8h_WT_air_In_replicate_1,2023/7/13
+SRR21942401,RNA,37542048,PRJNA891450,seedling,ethylene 8h,Dark grown seedling,Nip,Ribo_8h_WT_et_In_replicate_1,2023/7/13
+SRR21942402,RNA,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip mhz9,Ribo_8h_mhz9_air_In_replicate_1,2023/7/13
+SRR21942404,RNA,37542048,PRJNA891450,seedling,ethylene 4h,Dark grown seedling,Nip,Ribo_4h_WT_et_In_replicate_1,2023/7/13
+SRR21942405,Ribo,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip,Ribo_8h_WT_air_Ribo_replicate_1,2023/7/13
+SRR21942406,Ribo,37542048,PRJNA891450,seedling,ethylene 8h,Dark grown seedling,Nip,Ribo_8h_WT_et_Ribo_replicate_1,2023/7/13
+SRR21942408,Ribo,37542048,PRJNA891450,seedling,ethylene 8h,Dark grown seedling,Nip mhz9,Ribo_8h_mhz9_et_Ribo_replicate_1,2023/7/13
+SRR21942409,RNA,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip,Ribo_4h_WT_air_In_replicate_1,2023/7/13
+SRR21942410,RNA,37542048,PRJNA891450,seedling,normal,Dark grown seedling,Nip,Ribo_4h_WT_air_In_replicate_2,2023/7/13
+SRR21883625,RNA,38288993,PRJNA889923,leaf,125mMNaClfor12h,seedling,Yandao10,Y10RNA_seq_salt,2022/10/14
+SRR21883626,RNA,38288993,PRJNA889923,leaf,125mMNaClfor12h,seedling,Liangeng15,L15RNA_seq_salt,2022/10/14
+SRR21883627,Ribo,38288993,PRJNA889923,leaf,125mMNaClfor12h,seedling,Yandao10,Y10ribo_seq_salt,2022/10/14
+SRR21883628,Ribo,38288993,PRJNA889923,leaf,125mMNaClfor12h,seedling,Liangeng15,L15ribo_seq_salt,2022/10/14
+SRR13808034,RNA,34327320,PRJNA637713,leaf,normal,V2,japonica,Ns_leaf1_Rice_RNA_seq,2021/4/5
+SRR13808035,RNA,34327320,PRJNA637713,leaf,normal,booting stage,japonica,Nb_leaf2_Rice_RNA_seq,2021/4/5
+SRR13808036,RNA,34327320,PRJNA637713,leaf,normal,booting stage,japonica,Nb_leaf1_Rice_RNA_seq,2021/4/5
+SRR13808037,RNA,34327320,PRJNA637713,root,normal,V2,japonica,N_root1_Rice_RNA_seq,2021/4/5
+SRR13808039,RNA,34327320,PRJNA637713,seedling,normal,V2,japonica,N_seedling_Rice_RNA_seq,2021/4/5
+SRR13808040,RNA,34327320,PRJNA637713,sheath,normal,V2,japonica,leaf_sheath2_Rice_RNA_seq,2021/4/5
+SRR13808041,RNA,34327320,PRJNA637713,sheath,normal,V2,japonica,leaf_sheath1_Rice_RNA_seq,2021/4/5
+SRR13808042,RNA,34327320,PRJNA637713,spikelet,normal,booting stage,japonica,spikelet2_RNA_seq,2021/4/5
+SRR13808043,RNA,34327320,PRJNA637713,spikelet,normal,booting stage,japonica,spikelet1_RNA_seq,2021/4/5
+SRR13808064,Ribo,34327320,PRJNA637713,leaf,normal,V2,japonica,Ns_leaf2_Rice_Ribo_seq,2021/4/5
+SRR13808065,Ribo,34327320,PRJNA637713,leaf,normal,V2,japonica,Ns_leaf1_Rice_Ribo_seq,2021/4/5
+SRR13808066,Ribo,34327320,PRJNA637713,leaf,normal,booting stage,japonica,Nb_leaf2_Rice_Ribo_seq,2021/4/5
+SRR13808067,Ribo,34327320,PRJNA637713,leaf,normal,booting stage,japonica,Nb_leaf1_Rice_Ribo_seq,2021/4/5
+SRR13808068,Ribo,34327320,PRJNA637713,root,normal,V2,japonica,N_root1_Rice_Ribo_seq,2021/4/5
+SRR13808069,Ribo,34327320,PRJNA637713,seedling,normal,V2,japonica,N_seedling_Rice_Ribo_seq,2021/4/5
+SRR13808070,Ribo,34327320,PRJNA637713,sheath,normal,V2,japonica,leaf_sheath2_Rice_Ribo_seq,2021/4/5
+SRR13808072,Ribo,34327320,PRJNA637713,sheath,normal,V2,japonica,leaf_sheath1_Rice_Ribo_seq,2021/4/5
+SRR13808073,Ribo,34327320,PRJNA637713,sheath,normal,booting stage,japonica,bigleaf_sheath2_Rice_Ribo_seq,2021/4/5
+SRR13808074,Ribo,34327320,PRJNA637713,sheath,normal,booting stage,japonica,bigleaf_sheath1_Rice_Ribo_seq,2021/4/5
+SRR13808075,Ribo,34327320,PRJNA637713,spikelet,normal,booting stage,japonica,spikelet2_Ribo_seq,2021/4/5
+SRR13808076,Ribo,34327320,PRJNA637713,spikelet,normal,booting stage,japonica,spikelet1_Ribo_seq,2021/4/5
+SRR13808077,Ribo,34327320,PRJNA637713,stem,normal,booting stage,japonica,b_stem2_Rice_Ribo_seq,2021/4/5
+SRR13808078,Ribo,34327320,PRJNA637713,stem,normal,booting stage,japonica,b_stem1_Rice_Ribo_seq,2021/4/5
+SRR11943806,Ribo,34327320,PRJNA637713,stem,normal,V2,japonica,stem2_Rice,2021/4/5
+SRR11943807,Ribo,34327320,PRJNA637713,stem,normal,V2,japonica,stem1_Rice,2021/4/5
+SRR11943811,Ribo,34327320,PRJNA637713,root,normal,V2,japonica,root2_Rice,2021/4/5
+SRR11943812,Ribo,34327320,PRJNA637713,root,normal,V2,japonica,root1_Rice,2021/4/5
+SRR11943813,Ribo,34327320,PRJNA637713,leaf,normal,V2,japonica,leaf2_Rice,2021/4/5
+SRR11943814,Ribo,34327320,PRJNA637713,leaf,normal,V2,japonica,leaf1_Rice,2021/4/5
+CRR1263423,Ribo,37674078,PRJCA021138,leaf,normal,Seedling stage,Nip,Mock_1_Riboseq,2024/8/26
+CRR1263424,Ribo,37674078,PRJCA021138,leaf,normal,Seedling stage,Nip,Mock_2_Riboseq,2024/8/26
+CRR1263425,Ribo,37674078,PRJCA021138,leaf,normal,Seedling stage,Nip,Mock_3_Riboseq,2024/8/26
+CRR1263426,Ribo,37674078,PRJCA021138,leaf,M12H,Seedling stage,Nip,M12H_1_Riboseq,2024/8/26
+CRR1263427,Ribo,37674078,PRJCA021138,leaf,M12H,Seedling stage,Nip,M12H_2_Riboseq,2024/8/26
+CRR1263428,Ribo,37674078,PRJCA021138,leaf,M12H,Seedling stage,Nip,M12H_3_Riboseq,2024/8/26
+CRR1268495,RNA,37674078,PRJCA021138,leaf,M12H,Seedling stage,Nip,M12H_1_RNAseq,2024/8/26
+CRR1268496,RNA,37674078,PRJCA021138,leaf,M12H,Seedling stage,Nip,M12H_2_RNAseq,2024/8/26
+CRR1268497,RNA,37674078,PRJCA021138,leaf,M12H,Seedling stage,Nip,M12H_3_RNAseq,2024/8/26
+CRR1268498,RNA,37674078,PRJCA021138,leaf,normal,Seedling stage,Nip,Mock_1_RNAseq,2024/8/26
+CRR1268499,RNA,37674078,PRJCA021138,leaf,normal,Seedling stage,Nip,Mock_2_RNAseq,2024/8/26
+CRR1268500,RNA,37674078,PRJCA021138,leaf,normal,Seedling stage,Nip,Mock_3_RNAseq,2024/8/26
+Ribo_embryo_rep1,Ribo,This study,This study,embryo,normal,embryo,ZH11,Ribo_embryo_rep1,This study
+Ribo_embryo_rep2,Ribo,This study,This study,embryo,normal,embryo,ZH11,Ribo_embryo_rep2,This study
+Ribo_embryo_rep3,Ribo,This study,This study,embryo,normal,embryo,ZH11,Ribo_embryo_rep3,This study
+Ribo_seed_rep1,Ribo,This study,This study,seed,normal,seed,ZH11,Ribo_seed_rep1,This study
+Ribo_seed_rep2,Ribo,This study,This study,seed,normal,seed,ZH11,Ribo_seed_rep2,This study
+Ribo_seed_rep3,Ribo,This study,This study,seed,normal,seed,ZH11,Ribo_seed_rep3,This study
+Ribo_callus_diff_rep1,Ribo,This study,This study,differentiated callus,normal,callus,ZH11,Ribo_callus_diff_rep1,This study
+Ribo_callus_diff_rep2,Ribo,This study,This study,differentiated callus,normal,callus,ZH11,Ribo_callus_diff_rep2,This study
+Ribo_callus_diff_rep3,Ribo,This study,This study,differentiated callus,normal,callus,ZH11,Ribo_callus_diff_rep3,This study
+Ribo_callus_un_rep1,Ribo,This study,This study,undifferentiated callus,normal,callus,ZH11,Ribo_callus_un_rep1,This study
+Ribo_callus_un_rep2,Ribo,This study,This study,undifferentiated callus,normal,callus,ZH11,Ribo_callus_un_rep2,This study
+Ribo_callus_un_rep3,Ribo,This study,This study,undifferentiated callus,normal,callus,ZH11,Ribo_callus_un_rep3,This study
+RNA_embryo_rep1,RNA,This study,This study,embryo,normal,embryo,ZH11,RNA_embryo_rep1,This study
+RNA_embryo_rep2,RNA,This study,This study,embryo,normal,embryo,ZH11,RNA_embryo_rep2,This study
+RNA_embryo_rep3,RNA,This study,This study,embryo,normal,embryo,ZH11,RNA_embryo_rep3,This study
+RNA_seed_rep1,RNA,This study,This study,seed,normal,seed,ZH11,RNA_seed_rep1,This study
+RNA_seed_rep2,RNA,This study,This study,seed,normal,seed,ZH11,RNA_seed_rep2,This study
+RNA_seed_rep3,RNA,This study,This study,seed,normal,seed,ZH11,RNA_seed_rep3,This study
+RNA_callus_diff_rep1,RNA,This study,This study,differentiated callus,normal,callus,ZH11,RNA_callus_diff_rep1,This study
+RNA_callus_diff_rep2,RNA,This study,This study,differentiated callus,normal,callus,ZH11,RNA_callus_diff_rep2,This study
+RNA_callus_diff_rep3,RNA,This study,This study,differentiated callus,normal,callus,ZH11,RNA_callus_diff_rep3,This study
+RNA_callus_un_rep1,RNA,This study,This study,undifferentiated callus,normal,callus,ZH11,RNA_callus_un_rep1,This study
+RNA_callus_un_rep2,RNA,This study,This study,undifferentiated callus,normal,callus,ZH11,RNA_callus_un_rep2,This study
+RNA_callus_un_rep3,RNA,This study,This study,undifferentiated callus,normal,callus,ZH11,RNA_callus_un_rep3,This study

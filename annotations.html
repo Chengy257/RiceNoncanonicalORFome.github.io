@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotations - Rice Noncanonical ORFome</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables CSS/JS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Rice Noncanonical ORFome</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="stats.html">Data Statistics</a>
+        <a href="annotations.html">Annotations</a>
+        <a href="download.html">Downloads</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h2>Noncanonical ORF Annotations</h2>
+            <div id="table-annotations-container">
+                <div class="loading">Loading table data...</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p> Copyright © 2025 Rice Noncanonical ORFome | Laboratory of Development and Disease - Sun Yat-sen University </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Highlight active nav link
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // 使用 DataTables 生成表格
+            const createTable = (containerId, data) => {
+                const container = document.getElementById(containerId);
+                if (!container || !data || data.length === 0) {
+                    container.innerHTML = '<p>Error loading data or no data available.</p>';
+                    return;
+                }
+                // 生成表格HTML
+                let html = '<table id="myTable" style="width:100%"><thead><tr>';
+                data[0].forEach(h => html += `<th>${h}</th>`);
+                html += '</tr></thead><tbody>';
+                const headersLength = data[0].length;
+data.slice(1).forEach(row => {
+    const normalizedRow = row.slice(0, headersLength);
+    while(normalizedRow.length < headersLength) normalizedRow.push('');
+    html += '<tr>' + normalizedRow.map(cell => `<td>${cell}</td>`).join('') + '</tr>';
+                });
+                html += '</tbody></table>';
+                container.innerHTML = html;
+                // 初始化 DataTables
+                $(function() {
+                    $('#myTable').DataTable({
+                        scrollX: true,
+                        paging: true,
+                        pageLength: 10,
+                        lengthMenu: [10, 25, 50, 100],
+                        autoWidth: false
+                    });
+                });
+            };
+
+            const loadCSV = async (filePath, containerId) => {
+                const container = document.getElementById(containerId);
+                try {
+                    const response = await fetch(filePath);
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok. Status: ${response.status}`);
+                    }
+                    const csvText = await response.text();
+                    
+                    Papa.parse(csvText, {
+                        header: false,
+                        skipEmptyLines: true,
+                        complete: function(results) {
+                            createTable(containerId, results.data);
+                        },
+                        error: function(parseError) {
+                            throw new Error(`CSV parsing error: ${parseError.message}`);
+                        }
+                    });
+                } catch (error) {
+                    container.innerHTML = `<p>Error: Could not load data from <code>${filePath}</code>. Please ensure the file exists on the server.</p>`;
+                    console.error('Error loading or parsing CSV:', error);
+                }
+            };
+
+            loadCSV('res/TableS2A.csv', 'table-annotations-container');
+        });
+    </script>
+</body>
+</html>
