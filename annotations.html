@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annotations - Rice Noncanonical ORFome</title>
+    <title>Annotations - Rice Noncanonical ORFome | ORF Characterization</title>
+    <meta name="description" content="Detailed annotations for 8,253 noncanonical ORFs in rice. Explore chromosome distribution, ORF types (uORF, dORF, overlap ORF), and protein characteristics including molecular weight and isoelectric point.">
+    <meta name="keywords" content="ORF annotations, chromosome distribution, uORF, dORF, micropeptides, protein characteristics, molecular weight, isoelectric point">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- DataTables CSS/JS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <header>
@@ -26,11 +31,31 @@
         <a href="contact.html">Contact</a>
     </nav>
 
+    <!-- Data Visualization Section -->
+    <div class="container">
+        <div class="card chart-section">
+            <h2>ORF Distribution Overview</h2>
+            <div style="display: flex; justify-content: center;">
+                <div style="width: 100%; max-width: 900px;">
+                    <div class="chart-wrapper">
+                        <canvas id="chromosomeDistributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="card">
             <h2>Noncanonical ORF Annotations</h2>
             <div id="table-annotations-container">
-                <div class="loading">Loading table data...</div>
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Loading ORF annotations...</div>
+                    <div class="loading-progress">
+                        <div class="loading-progress-bar"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -40,19 +65,10 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    <script src="js/common.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Highlight active nav link
-            const currentPage = window.location.pathname.split('/').pop();
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                const linkPage = link.getAttribute('href');
-                if (linkPage === currentPage) {
-                    link.classList.add('active');
-                }
-            });
-
             // 使用 DataTables 生成表格
             const createTable = (containerId, data) => {
                 const container = document.getElementById(containerId);
@@ -110,7 +126,60 @@ data.slice(1).forEach(row => {
             };
 
             loadCSV('res/TableS2A.csv', 'table-annotations-container');
+
+            // 加载并生成可视化图表
+            loadCSVAndCreateCharts();
         });
+
+        // 加载CSV数据并创建图表
+        async function loadCSVAndCreateCharts() {
+            try {
+                const response = await fetch('res/TableS2A.csv');
+                const csvText = await response.text();
+
+                Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: function(results) {
+                        createChartsFromData(results.data);
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading CSV for charts:', error);
+            }
+        }
+
+        // 从数据创建图表
+        function createChartsFromData(data) {
+            // 提取染色体分布数据（注意：CSV字段名是Chromsome，拼写错误）
+            const chrCounts = {};
+            data.forEach(row => {
+                const chr = row.Chromsome || 'Unknown';
+                chrCounts[chr] = (chrCounts[chr] || 0) + 1;
+            });
+
+            // 排序染色体（按照数字大小排序，Chr1, Chr2, Chr3...）
+            const sortedChrs = Object.keys(chrCounts).sort((a, b) => {
+                // 提取染色体数字
+                const numA = parseInt(a.replace(/\D/g, ''));
+                const numB = parseInt(b.replace(/\D/g, ''));
+                if (!isNaN(numA) && !isNaN(numB)) {
+                    return numA - numB;
+                }
+                return a.localeCompare(b);
+            });
+
+            // 创建染色体分布条形图
+            const chrValues = sortedChrs.map(chr => chrCounts[chr]);
+
+            createBarChart(
+                'chromosomeDistributionChart',
+                sortedChrs,
+                chrValues,
+                'Number of ORFs',
+                'Distribution by Chromosome'
+            );
+        }
     </script>
 </body>
 </html>

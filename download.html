@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloads - Rice Noncanonical ORFome</title>
+    <title>Downloads - Rice Noncanonical ORFome | Data Repository</title>
+    <meta name="description" content="Download comprehensive datasets for rice noncanonical ORF research. Access Ribo-seq data, ORF annotations, mass spectrometry results, and trait-associated variant information.">
+    <meta name="keywords" content="data download, ORF annotations, Ribo-seq data, mass spectrometry, supplementary tables, rice datasets, CSV download">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
@@ -81,18 +84,6 @@
         <p> Copyright © 2025 Rice Noncanonical ORFome | Laboratory of Development and Disease - Sun Yat-sen University </p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Highlight active nav link
-            const currentPage = window.location.pathname.split('/').pop();
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                const linkPage = link.getAttribute('href');
-                if (linkPage === currentPage) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <script src="js/common.js"></script>
 </body>
 </html>

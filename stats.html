@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Statistics - Rice Noncanonical ORFome</title>
-    <!-- Reusing styles from index.html for consistency -->
+    <title>Data Statistics - Rice Noncanonical ORFome | Ribo-seq Datasets</title>
+    <meta name="description" content="Explore 119 Ribo-seq datasets from rice (Oryza sativa) covering multiple tissues and developmental stages. View detailed statistics on ribosome-protected fragments analysis.">
+    <meta name="keywords" content="Ribo-seq, rice datasets, tissue-specific, developmental stages, RNA-seq, ribosome profiling, statistics">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- DataTables CSS/JS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <header>
@@ -25,17 +29,63 @@
         <a href="contact.html">Contact</a>
     </nav>
 
+    <!-- Data Visualization Section -->
+    <div class="container">
+        <div class="card chart-section">
+            <h2 style="text-align: center; margin-bottom: 30px;">Data Overview</h2>
+
+            <!-- Charts Container - Flex Layout with Different Sizes -->
+            <div style="display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; padding: 20px;">
+                <!-- Tissue Distribution Chart (Pie Chart - Smaller) -->
+                <div style="flex: 0 0 auto; width: 380px;">
+                    <div class="chart-wrapper" style="height: 320px;">
+                        <canvas id="tissueDistributionChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Development Stage Chart (Bar Chart - Larger) -->
+                <div style="flex: 0 1 auto; width: 550px; min-width: 450px;">
+                    <div class="chart-wrapper" style="height: 320px;">
+                        <canvas id="developmentStageChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="card">
             <h2>Ribo-seq datasets and coresspoonding RNA-seq used in this study.</h2>
             <div id="table-a-container">
-                <div class="loading">Loading table data...</div>
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Loading Ribo-seq dataset information...</div>
+                    <div class="loading-progress">
+                        <div class="loading-progress-bar"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card">
             <h2>Statistics of Ribo-seq reads number in processing steps.</h2>
+
+            <!-- Processing Pipeline Chart -->
+            <div style="display: flex; justify-content: center; margin-bottom: 30px;">
+                <div style="width: 100%; max-width: 800px;">
+                    <div class="chart-wrapper" style="height: 400px;">
+                        <canvas id="processingStepsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
             <div id="table-b-container">
-                <div class="loading">Loading table data...</div>
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Loading read statistics...</div>
+                    <div class="loading-progress">
+                        <div class="loading-progress-bar"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -45,19 +95,10 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    <script src="js/common.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Highlight active nav link
-            const currentPage = window.location.pathname.split('/').pop();
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                const linkPage = link.getAttribute('href');
-                if (linkPage === currentPage) {
-                    link.classList.add('active');
-                }
-            });
-
             // DataTables表格生成
             const createTable = (containerId, data, tableId) => {
                 const container = document.getElementById(containerId);
@@ -111,7 +152,201 @@
             // 分别加载两个表格
             loadCSV('res/TableS1A.csv', 'table-a-container', 'myTableA');
             loadCSV('res/TableS1B.csv', 'table-b-container', 'myTableB');
+
+            // 加载并生成可视化图表
+            loadCSVAndCreateCharts();
         });
+
+        // 加载CSV数据并创建图表
+        async function loadCSVAndCreateCharts() {
+            try {
+                // 加载TableS1A用于组织分布和发育阶段图表
+                const response1 = await fetch('res/TableS1A.csv');
+                const csvText1 = await response1.text();
+
+                Papa.parse(csvText1, {
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: function(results) {
+                        createChartsFromData(results.data);
+                    }
+                });
+
+                // 加载TableS1B用于处理流程图表
+                const response2 = await fetch('res/TableS1B.csv');
+                const csvText2 = await response2.text();
+
+                Papa.parse(csvText2, {
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: function(results) {
+                        createProcessingStepsChart(results.data);
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading CSV for charts:', error);
+            }
+        }
+
+        // 创建处理流程图表
+        function createProcessingStepsChart(data) {
+            // 初始化总和
+            let totalRaw = 0;
+            let totalClean = 0;
+            let totalRPFs = 0;
+            let totalORF = 0;
+
+            // 遍历所有样本，累加每个步骤的数据
+            data.forEach(row => {
+                // 解析数字（移除逗号和引号）
+                const raw = parseFloat((row['Raw reads number'] || '0').replace(/,/g, '').replace(/"/g, ''));
+                const clean = parseFloat((row['Clean reads number'] || '0').replace(/,/g, '').replace(/"/g, ''));
+                const rpfs = parseFloat((row['RPFs number'] || '0').replace(/,/g, '').replace(/"/g, ''));
+                const orf = parseFloat((row['ORF assigned number'] || '0').replace(/,/g, '').replace(/"/g, ''));
+
+                totalRaw += raw || 0;
+                totalClean += clean || 0;
+                totalRPFs += rpfs || 0;
+                totalORF += orf || 0;
+            });
+
+            // 转换为更易读的格式（Billion, Million）
+            const formatNumber = (num) => {
+                if (num >= 1e9) {
+                    return (num / 1e9).toFixed(2) + 'B';
+                } else if (num >= 1e6) {
+                    return (num / 1e6).toFixed(2) + 'M';
+                } else if (num >= 1e3) {
+                    return (num / 1e3).toFixed(2) + 'K';
+                }
+                return num.toFixed(0);
+            };
+
+            // 准备图表数据
+            const labels = ['Raw Reads', 'Clean Reads', 'RPFs', 'ORF Assigned'];
+            const values = [totalRaw, totalClean, totalRPFs, totalORF];
+
+            // 创建垂直条形图
+            const ctx = document.getElementById('processingStepsChart');
+            if (!ctx) return;
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Read Count',
+                        data: values,
+                        backgroundColor: [
+                            '#2c3e50',  // Raw - 深蓝灰
+                            '#34495e',  // Clean - 蓝灰
+                            '#3498db',  // RPFs - 蓝色
+                            '#5dade2'   // ORF - 浅蓝
+                        ],
+                        borderColor: [
+                            '#2c3e50',
+                            '#34495e',
+                            '#3498db',
+                            '#5dade2'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const value = context.parsed.y;
+                                    return formatNumber(value) + ' reads';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return formatNumber(value);
+                                },
+                                font: {
+                                    size: 11
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Number of Reads',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 从数据创建图表
+        function createChartsFromData(data) {
+            // 提取组织分布数据
+            const tissueCounts = {};
+            data.forEach(row => {
+                const tissue = row.Tissue || 'Unknown';
+                tissueCounts[tissue] = (tissueCounts[tissue] || 0) + 1;
+            });
+
+            // 提取发育阶段数据
+            const stageCounts = {};
+            data.forEach(row => {
+                const stage = row['Development Stage'] || 'Unknown';
+                stageCounts[stage] = (stageCounts[stage] || 0) + 1;
+            });
+
+            // 创建组织分布饼图
+            const tissueLabels = Object.keys(tissueCounts);
+            const tissueValues = Object.values(tissueCounts);
+            const tissueColors = [
+                '#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6',
+                '#1abc9c', '#e67e22', '#34495e', '#16a085', '#c0392b'
+            ];
+
+            createPieChart(
+                'tissueDistributionChart',
+                tissueLabels,
+                tissueValues,
+                tissueColors.slice(0, tissueLabels.length),
+                'Distribution by Tissue Type'
+            );
+
+            // 创建发育阶段条形图
+            const stageLabels = Object.keys(stageCounts);
+            const stageValues = Object.values(stageCounts);
+
+            createHorizontalBarChart(
+                'developmentStageChart',
+                stageLabels,
+                stageValues,
+                'Number of Datasets',
+                'Distribution by Development Stage'
+            );
+        }
     </script>
 </body>
 </html>
