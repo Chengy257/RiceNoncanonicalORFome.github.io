@@ -190,117 +190,156 @@
 
         // 创建处理流程图表
         function createProcessingStepsChart(data) {
-            // 初始化总和
-            let totalRaw = 0;
-            let totalClean = 0;
-            let totalRPFs = 0;
-            let totalORF = 0;
+            try {
+                console.log('Creating processing steps chart with', data.length, 'rows');
 
-            // 遍历所有样本，累加每个步骤的数据
-            data.forEach(row => {
-                // 解析数字（移除逗号和引号）
-                const raw = parseFloat((row['Raw reads number'] || '0').replace(/,/g, '').replace(/"/g, ''));
-                const clean = parseFloat((row['Clean reads number'] || '0').replace(/,/g, '').replace(/"/g, ''));
-                const rpfs = parseFloat((row['RPFs number'] || '0').replace(/,/g, '').replace(/"/g, ''));
-                const orf = parseFloat((row['ORF assigned number'] || '0').replace(/,/g, '').replace(/"/g, ''));
+                // 健壮的数字解析函数
+                const parseNumber = (value) => {
+                    if (!value && value !== 0) return 0;
+                    // 移除所有非数字字符（除了小数点和负号）
+                    const cleaned = String(value).replace(/[^\d.-]/g, '');
+                    const num = parseFloat(cleaned);
+                    return isNaN(num) ? 0 : num;
+                };
 
-                totalRaw += raw || 0;
-                totalClean += clean || 0;
-                totalRPFs += rpfs || 0;
-                totalORF += orf || 0;
-            });
+                // 查找字段的辅助函数
+                const findFieldValue = (row, possibleNames) => {
+                    const keys = Object.keys(row);
+                    for (let name of possibleNames) {
+                        const foundKey = keys.find(k => k.trim() === name);
+                        if (foundKey && row[foundKey]) {
+                            return parseNumber(row[foundKey]);
+                        }
+                    }
+                    return 0;
+                };
 
-            // 转换为更易读的格式（Billion, Million）
-            const formatNumber = (num) => {
-                if (num >= 1e9) {
-                    return (num / 1e9).toFixed(2) + 'B';
-                } else if (num >= 1e6) {
-                    return (num / 1e6).toFixed(2) + 'M';
-                } else if (num >= 1e3) {
-                    return (num / 1e3).toFixed(2) + 'K';
+                // 初始化总和
+                let totalRaw = 0;
+                let totalClean = 0;
+                let totalRPFs = 0;
+                let totalORF = 0;
+
+                // 遍历所有样本，累加每个步骤的数据
+                data.forEach((row, index) => {
+                    if (index === 0) {
+                        console.log('Sample row:', row);
+                    }
+
+                    // 使用多种可能的字段名尝试匹配
+                    const raw = findFieldValue(row, ['Raw reads number', 'Raw reads']);
+                    const clean = findFieldValue(row, ['Clean RPFs number', 'Clean reads number']);
+                    const rpfs = findFieldValue(row, ['Uniquely mapped RPFs number', 'RPFs number']);
+                    const orf = findFieldValue(row, ['ORF assigned number', 'ORF assigned']);
+
+                    totalRaw += raw;
+                    totalClean += clean;
+                    totalRPFs += rpfs;
+                    totalORF += orf;
+                });
+
+                console.log('Totals:', { totalRaw, totalClean, totalRPFs, totalORF });
+
+                // 转换为更易读的格式（Billion, Million）
+                const formatNumber = (num) => {
+                    if (num >= 1e9) {
+                        return (num / 1e9).toFixed(2) + 'B';
+                    } else if (num >= 1e6) {
+                        return (num / 1e6).toFixed(2) + 'M';
+                    } else if (num >= 1e3) {
+                        return (num / 1e3).toFixed(2) + 'K';
+                    }
+                    return num.toFixed(0);
+                };
+
+                // 准备图表数据
+                const labels = ['Raw Reads', 'Clean RPFs', 'Unique RPFs', 'ORF Assigned'];
+                const values = [totalRaw, totalClean, totalRPFs, totalORF];
+                const formattedValues = values.map(v => formatNumber(v));
+
+                // 创建垂直条形图
+                const ctx = document.getElementById('processingStepsChart');
+                if (!ctx) {
+                    console.error('Canvas element not found!');
+                    return;
                 }
-                return num.toFixed(0);
-            };
 
-            // 准备图表数据
-            const labels = ['Raw Reads', 'Clean Reads', 'RPFs', 'ORF Assigned'];
-            const values = [totalRaw, totalClean, totalRPFs, totalORF];
-
-            // 创建垂直条形图
-            const ctx = document.getElementById('processingStepsChart');
-            if (!ctx) return;
-
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Read Count',
-                        data: values,
-                        backgroundColor: [
-                            '#2c3e50',  // Raw - 深蓝灰
-                            '#34495e',  // Clean - 蓝灰
-                            '#3498db',  // RPFs - 蓝色
-                            '#5dade2'   // ORF - 浅蓝
-                        ],
-                        borderColor: [
-                            '#2c3e50',
-                            '#34495e',
-                            '#3498db',
-                            '#5dade2'
-                        ],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Read Count',
+                            data: values,
+                            backgroundColor: [
+                                '#2c3e50',  // Raw - 深蓝灰
+                                '#34495e',  // Clean - 蓝灰
+                                '#3498db',  // RPFs - 蓝色
+                                '#5dade2'   // ORF - 浅蓝
+                            ],
+                            borderColor: [
+                                '#2c3e50',
+                                '#34495e',
+                                '#3498db',
+                                '#5dade2'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const value = context.parsed.y;
+                                        return formatNumber(value) + ' reads';
+                                    }
+                                }
+                            }
                         },
-                        title: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const value = context.parsed.y;
-                                    return formatNumber(value) + ' reads';
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return formatNumber(value);
+                                    },
+                                    font: {
+                                        size: 11
+                                    }
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Number of Reads',
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    }
                                 }
                             }
                         }
                     },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function(value) {
-                                    return formatNumber(value);
-                                },
-                                font: {
-                                    size: 11
-                                }
-                            },
-                            title: {
-                                display: true,
-                                text: 'Number of Reads',
-                                font: {
-                                    size: 14,
-                                    weight: 'bold'
-                                }
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                font: {
-                                    size: 12
-                                }
-                            }
-                        }
-                    }
-                }
-            });
+                });
+
+                console.log('Chart created successfully');
+            } catch (error) {
+                console.error('Error creating processing steps chart:', error);
+            }
         }
 
         // 从数据创建图表
