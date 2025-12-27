@@ -1,4 +1,4 @@
-﻿Ribo-seq Run ID,Raw reads number,Clean reads number,Clean reads %,RPFs number,RPFs %,ORF assigned number,ORF assigned %
+﻿Ribo-seq Run ID,Raw reads number,Clean RPFs number,Clean RPFs %,Uniquely mapped RPFs number,Uniquely mapped RPFs %,ORF assigned number,ORF assigned %
 CRR104628,"135,295,184","64,026,576",47.32%,"3,530,128",2.61%,"2,080,170",1.54%
 CRR104629,"164,233,959","78,993,848",48.10%,"4,341,505",2.64%,"2,584,798",1.57%
 CRR104630,"126,184,805","62,247,660",49.33%,"3,950,274",3.13%,"2,284,975",1.81%
